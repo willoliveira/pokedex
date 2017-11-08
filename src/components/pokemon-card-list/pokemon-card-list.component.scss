@@ -1,3 +1,11 @@
 pokemon-card-list {
+	width: 200px;
+	height: 200px;
 
+	margin: 0 auto;
+	text-align: center;
+
+	.card-pokemon__image {
+		background-color: #F2F2F2;
+	}
 }

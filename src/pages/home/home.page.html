@@ -1,5 +1,4 @@
-<section>
-	<div *ngFor="let pokemon of pokemons">
-		<pokemon-card-list [num]="pokemon.num" [name]="pokemon.name"></pokemon-card-list>
-	</div>
-</section>
+<pokemon-card-list
+	*ngFor="let pokemon of pokemons"
+	[num]="pokemon.num" [name]="pokemon.name">
+</pokemon-card-list>
