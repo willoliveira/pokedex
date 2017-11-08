@@ -14,6 +14,7 @@ export class PokemonCardListComponent implements OnInit {
 
 	@Input() num: number;
 	@Input() name: string;
+	@Input() types: Array<any>;
 
 	ngOnInit() {
 

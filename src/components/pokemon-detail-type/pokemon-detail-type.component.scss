@@ -1,0 +1,17 @@
+pokemon-detail-type {
+
+	.pokemon-type__container {
+		height: 20px;
+
+		.pokemon-type__item {
+			float: left;
+			width: 40%;
+
+		    border-radius: 4px;
+
+			&:not(:last-child) {
+				margin-right: 4px;
+			}
+		}
+	}
+}

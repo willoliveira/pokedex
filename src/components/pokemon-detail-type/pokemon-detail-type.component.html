@@ -1,0 +1,7 @@
+<div class="pokemon-type__container">
+	<div class="pokemon-type__item"
+		*ngFor="let type of types"
+		[ngClass]="type.name">
+		{{type.name}}
+	</div>
+</div>

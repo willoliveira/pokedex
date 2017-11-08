@@ -1,1 +1,71 @@
-/* You can add global styles to this file, and also import other style files */
+$pokemon-type-colors :(
+	bug: (
+		background-color: #729f3f
+	),
+	dragon: (
+		background-color: (#53a4cf, #f16e57)
+	),
+	fairy: (
+		background-color: #fdb9e9
+	),
+	fire: (
+		background-color: #fd7d24
+	),
+	ghost: (
+		background-color: #7b62a3
+	),
+	ground: (
+		background-color: (#f7de3f, #ab9842)
+	),
+	normal: (
+		background-color: #a4acaf
+	),
+	physic: (
+		background-color: #f366b9
+	),
+	steel: (
+		background-color: #9eb7b8
+	),
+	dark: (
+		background-color: #707070
+	),
+	eletric: (
+		background-color:  #eed535
+	),
+	fighting: (
+		background-color: #d56723
+	),
+	flying: (
+		background-color: (#3dc7ef, #bdb9b8)
+	),
+	grass: (
+		background-color: #9bcc50
+	),
+	ice: (
+		background-color: #51c4e7
+	),
+	poison: (
+		background-color: #b97fc9
+	),
+	rock: (
+		background-color: #a38c21
+	),
+	water: (
+		background-color: #4592c4
+	),
+);
+
+
+@each $label, $map in $pokemon-type-colors {
+
+	@if length(map-get($map, background-color)) == 1 {
+		.pokemon-type__item.#{$label} {
+			background-color: map-get($map, background-color);
+		}
+	}
+	@else {
+		.pokemon-type__item.#{$label} {
+			background: linear-gradient(180deg, nth(map-get($map, background-color), 1) 50%, nth(map-get($map, background-color), 2) 50%);
+		}
+	}
+}
