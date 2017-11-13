@@ -1,0 +1,91 @@
+$pokemon-type-colors :(
+	bug: (
+		background-color: #729f3f,
+		font-color: #FFF
+	),
+	dragon: (
+		background-color: (#53a4cf, #f16e57),
+		font-color: #FFF
+	),
+	fairy: (
+		background-color: #fdb9e9,
+		font-color: #000
+	),
+	fire: (
+		background-color: #fd7d24,
+		font-color: #FFF
+	),
+	ghost: (
+		background-color: #7b62a3,
+		font-color: #FFF
+	),
+	ground: (
+		background-color: (#f7de3f, #ab9842),
+		font-color: #000
+	),
+	normal: (
+		background-color: #a4acaf,
+		font-color: #000
+	),
+	physic: (
+		background-color: #f366b9,
+		font-color: #FFF
+	),
+	steel: (
+		background-color: #9eb7b8,
+		font-color: #000
+	),
+	dark: (
+		background-color: #707070,
+		font-color: #FFF
+	),
+	eletric: (
+		background-color:  #eed535,
+		font-color: #000
+	),
+	fighting: (
+		background-color: #d56723,
+		font-color: #FFF
+	),
+	flying: (
+		background-color: (#3dc7ef, #bdb9b8),
+		font-color: #000
+	),
+	grass: (
+		background-color: #9bcc50,
+		font-color: #000
+	),
+	ice: (
+		background-color: #51c4e7,
+		font-color: #000
+	),
+	poison: (
+		background-color: #b97fc9,
+		font-color: #FFF
+	),
+	rock: (
+		background-color: #a38c21,
+		font-color: #FFF
+	),
+	water: (
+		background-color: #4592c4,
+		font-color: #FFF
+	),
+);
+
+
+//gerando estilos para card de tipos dos pokemons
+@each $label, $map in $pokemon-type-colors {
+
+	// se for mais de uma cor o tipo do pokemon
+	@if length(map-get($map, background-color)) == 1 {
+		.pokemon-type__item.#{$label} {
+			background-color: map-get($map, background-color);
+		}
+	}
+	@else {
+		.pokemon-type__item.#{$label} {
+			background: linear-gradient(180deg, nth(map-get($map, background-color), 1) 50%, nth(map-get($map, background-color), 2) 50%);
+		}
+	}
+}
