@@ -10,9 +10,11 @@ import { NumPokemons } from '../../config/Config';
 	selector: 'home-page',
 	templateUrl: './home.page.html',
 	styleUrls: ['./home.page.scss'],
-  	encapsulation: ViewEncapsulation.None
+encapsulation: ViewEncapsulation.None
 })
 export class HomePage implements OnInit {
+
+	query: string;
 
 	pagination: { page: number, limit: number } = {
 		page: 0,

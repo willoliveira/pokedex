@@ -1,6 +1,12 @@
- <pokemon-card-list
-	*ngFor="let pokemon of pokemons"
-	[num]="pokemon.num"
-	[name]="pokemon.name"
-	[types]="pokemon.types">
-</pokemon-card-list>
+<div class="searcher-pokemon">
+	<input [(ngModel)]="query"
+		class="searcher-pokemon__input" type="text" placeholder="Procure um pokemon" />
+</div>
+<section class="home__content">
+	<pokemon-card-list
+		*ngFor="let pokemon of pokemons | filter:query:'name'"
+		[num]="pokemon.num"
+		[name]="pokemon.name"
+		[types]="pokemon.types">
+	</pokemon-card-list>
+</section>

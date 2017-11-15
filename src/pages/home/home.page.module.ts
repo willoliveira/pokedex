@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
@@ -6,15 +7,18 @@ import { PokemonCardListComponentModule } from '../../components/pokemon-card-li
 
 import { HomePage } from './home.page';
 
+import { FilterPipe } from '../../pipes/filter/filter.pipe';
+
 @NgModule({
 	declarations: [
-		HomePage
+		HomePage,
+
+		FilterPipe
 	],
 	imports: [
 		PokemonCardListComponentModule,
 
-		BrowserModule,
-		HttpModule
+		FormsModule, BrowserModule, HttpModule
 	],
 	providers: [
 		PokemonCardListComponentModule

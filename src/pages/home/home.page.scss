@@ -1,6 +1,29 @@
+$searcher_height: 50px;
+
 home-page {
 	display: flex;
 	flex-wrap: wrap;
 
 	justify-content: center;
+
+	.home__content {
+		margin-top: $searcher_height;
+		height: 100%;
+		width: 100%;
+
+		pokemon-card-list {
+			display: inline-flex;
+		}
+	}
+
+	.searcher-pokemon {
+
+		width: 100%;
+		position: fixed;
+
+		.searcher-pokemon__input {
+			height: $searcher_height;
+			width: 100%
+		}
+	}
 }
